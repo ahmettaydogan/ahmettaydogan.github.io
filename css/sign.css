@@ -1,0 +1,97 @@
+body.bg {
+  background-color: #f3f4f6;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: sans-serif;
+  margin: 0;
+}
+
+.form-box {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+.hidden {
+  display: none;
+}
+
+.form-title {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  font-weight: bold;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.form input {
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.btn {
+  padding: 0.75rem;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.btn.blue {
+  background-color: #2563eb;
+}
+
+.btn.blue:hover {
+  background-color: #1d4ed8;
+}
+
+.btn.green {
+  background-color: #16a34a;
+}
+
+.btn.green:hover {
+  background-color: #15803d;
+}
+
+.switch {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.switch a {
+  color: #2563eb;
+  text-decoration: none;
+}
+
+.switch a:hover {
+  text-decoration: underline;
+}
+
+.back-link {
+  margin-top: 1.5rem;
+}
+
+.back-link a {
+  font-size: 0.85rem;
+  color: #555;
+  text-decoration: none;
+}
+
+.back-link a:hover {
+  text-decoration: underline;
+}
