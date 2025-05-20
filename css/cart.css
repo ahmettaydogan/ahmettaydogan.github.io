@@ -1,0 +1,28 @@
+    .cart-page {
+      padding: 4rem 1rem;
+      text-align: center;
+    }
+
+    .cart-page h1 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .empty-cart {
+      font-size: 1rem;
+      color: #666;
+    }
+
+    .back-home {
+      display: inline-block;
+      margin-top: 2rem;
+      text-decoration: none;
+      padding: 0.5rem 1rem;
+      background: #333;
+      color: #fff;
+      border-radius: 4px;
+    }
+
+    .back-home:hover {
+      background: #000;
+    }
