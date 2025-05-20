@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Giriş / Kayıt</title>
+
+  <link rel="stylesheet" href="css/sign.css">
+  <link rel="icon" type="image/x-icon" href="img/logo.ico">
+</head>
+
+<body class="bg">
+
+  <div id="loginForm" class="form-box">
+    <h2 class="form-title">Giriş Yap</h2>
+    <form class="form" onsubmit="event.preventDefault(); alert('Giriş başarılı!');">
+      <input type="email" placeholder="E-posta" required>
+      <input type="password" placeholder="Şifre" required>
+      <button type="submit" class="btn blue">Giriş</button>
+    </form>
+    <p class="switch">Hesabınız yok mu? <a href="#" onclick="toggleForm()">Kayıt Ol</a></p>
+    <div class="back-link">
+      <a href="index.html">← Ana sayfaya dön</a>
+    </div>
+  </div>
+
+  <div id="registerForm" class="form-box hidden">
+    <h2 class="form-title">Kayıt Ol</h2>
+    <form class="form" onsubmit="event.preventDefault(); alert('Kayıt başarılı!');">
+      <input type="text" placeholder="Ad Soyad" required>
+      <input type="email" placeholder="E-posta" required>
+      <input type="password" placeholder="Şifre" required>
+      <button type="submit" class="btn green">Kayıt Ol</button>
+    </form>
+    <p class="switch">Zaten hesabınız var mı? <a href="#" onclick="toggleForm()">Giriş Yap</a></p>
+    <div class="back-link">
+      <a href="index.html">← Ana sayfaya dön</a>
+    </div>
+  </div>
+
+  <script src="js/sign.js"></script>
+</body>
+
+</html>

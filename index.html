@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AydoğanKitap</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" type="image/x-icon" href="img/logo.ico">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="container navbar-inner">
+      <a href="index.html"><img class="logo" src="img/logo.png"></a>
+      <input type="text" id="searchInput" class="search" placeholder="Kitap ara..." />
+      <nav class="nav-right">
+        <a href="sign.html" class="auth-btn">Giriş / Kayıt</a>
+        <a href="cart.html">
+          <button class="cart-btn" title="Sepet">
+          <svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="#333">
+          <path d="M7 4h-2l-1 2h-2v2h1l3.6 7.59-1.35 2.44c-.16.29-.25.63-.25.97
+             0 1.1.9 2 2 2h12v-2h-12l1.1-2h7.45c.75 0 1.41-.41
+             1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48
+             0-.55-.45-1-1-1h-14z" />
+          </svg>
+  <span class="cart-count">0</span>
+</button>
+
+          </a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Kategoriler -->
+  <div class="kategori-bar">
+    <div class="kategori-container" id="kategoriBar">
+      <a href="#" class="kategori active" onclick="setActiveCategory(this, 'tumu')">Tümü</a>
+      <a href="#" class="kategori" onclick="setActiveCategory(this, 'roman')">Roman</a>
+      <a href="#" class="kategori" onclick="setActiveCategory(this, 'edebiyat')">Edebiyat</a>
+      <a href="#" class="kategori" onclick="setActiveCategory(this, 'cocuk')">Çocuk</a>
+      <a href="#" class="kategori" onclick="setActiveCategory(this, 'bilim')">Bilim</a>
+      <a href="#" class="kategori" onclick="setActiveCategory(this, 'felsefe')">Felsefe</a>
+      <a href="#" class="kategori" onclick="setActiveCategory(this, 'tarih')">Tarih</a>
+    </div>
+  </div>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <h2>En Yeni Kitaplar, En Uygun Fiyatlarla</h2>
+      <p>Popüler yazarlar, klasikler ve çok daha fazlası seni bekliyor.</p>
+    </div>
+  </section>
+
+  <!-- Ürünler -->
+  <main class="container kitap-grid" id="bookGrid"></main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">© 2025 AydoğanKitap. Tüm hakları saklıdır.</div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
+
