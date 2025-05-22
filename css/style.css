@@ -245,3 +245,39 @@ body {
   border-top: 1px solid #ddd;
 }
 
+
+.sort-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.sort-container label {
+  font-weight: bold;
+  font-size: 16px;
+  color: #333;
+}
+
+#sortSelect {
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+  color: #333;
+  font-size: 14px;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+#sortSelect:hover {
+  border-color: #888;
+  background-color: #fff;
+}
+
+#sortSelect:focus {
+  outline: none;
+  border-color: #3f51b5;
+  box-shadow: 0 0 0 2px rgba(63, 81, 181, 0.2);
+}
