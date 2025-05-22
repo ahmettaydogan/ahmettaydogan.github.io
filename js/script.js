@@ -194,7 +194,6 @@ function renderSearchResults(list) {
   });
 }
 
-
 function handleSortChange() {
   const sortValue = document.getElementById("sortSelect").value;
   if (sortValue === "default") {
@@ -261,8 +260,3 @@ function renderSortedBooks(list) {
     container.appendChild(card);
   });
 }
-
-
-
-
-
