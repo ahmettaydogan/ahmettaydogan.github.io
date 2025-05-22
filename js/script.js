@@ -194,3 +194,72 @@ function renderSearchResults(list) {
   });
 }
 
+
+function handleSortChange() {
+  const sortValue = document.getElementById("sortSelect").value;
+  if (sortValue === "default") {
+    // Varsayılan sıralama (kategoriye göre render)
+    const activeCategory = document.querySelector(".kategori.active");
+    const category = activeCategory ? activeCategory.getAttribute("onclick").match(/'([^']+)'/)[1] : "tumu";
+    renderBooks(category);
+  } else {
+    sortBooksByPrice(sortValue);
+  }
+}
+
+function sortBooksByPrice(order) {
+  const activeCategory = document.querySelector(".kategori.active");
+  const category = activeCategory ? activeCategory.getAttribute("onclick").match(/'([^']+)'/)[1] : "tumu";
+  const list = category === "tumu" ? books : books.filter(b => b.category === category);
+
+  const sorted = list.slice().sort((a, b) => {
+    const priceA = parseFloat(a.price.replace("₺", "").replace(",", "."));
+    const priceB = parseFloat(b.price.replace("₺", "").replace(",", "."));
+    return order === "asc" ? priceA - priceB : priceB - priceA;
+  });
+
+  renderSortedBooks(sorted);
+}
+
+function renderSortedBooks(list) {
+  const container = document.getElementById("bookGrid");
+  container.innerHTML = "";
+  list.forEach(book => {
+    const card = document.createElement("div");
+    card.className = "card";
+    card.innerHTML = `
+      <a href="book.html?book=${encodeURIComponent(book.name)}" style="text-decoration: none; color: inherit;">
+        <img src="${book.image}" alt="${book.name}">
+        <div class="card-content">
+          <h3>${book.name}</h3>
+          <p>${book.author}</p>
+          <div class="card-footer">
+            <span>${book.price}</span>
+            <div class="icons">
+              <button title="Sepete Ekle">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="#444">
+                  <path d="M7 4h-2l-1 2h-2v2h1l3.6 7.59-1.35 2.44
+                           c-.16.29-.25.63-.25.97 0 1.1.9 2 2 2h12v-2h-12l1.1-2h7.45
+                           c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48
+                           0-.55-.45-1-1-1h-14z"/>
+                </svg>
+              </button>
+              <button title="Favorilere Ekle">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="#444">
+                  <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28
+                           2 8.5 2 6 4 4 6.5 4c1.74 0 3.41 1.01
+                           4.22 2.09C11.59 5.01 13.26 4 15 4
+                           17.5 4 19.5 6 19.5 8.5c0 3.78-3.4 6.86-8.55
+                           11.54L12 21.35z"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </a>
+    `;
+    container.appendChild(card);
+  });
+}
+
+
