@@ -3,7 +3,7 @@ const books = [
     name: "Kavgam",
     author: "Adolf Hitler",
     price: "₺59,90",
-    category: "tarih",
+    category: "Tarih",
     image: "img/kavgam.jpg",
     description: "Kavgam, Adolf Hitler'in otobiyografisi ve politik manifestosudur. Nazi ideolojisinin temelini oluşturan bu eser, Almanya'nın I. Dünya Savaşı sonrası yaşadığı çöküşü, antisemitik görüşleri ve otoriter yönetim hayalini detaylı biçimde sunar. Döneminin politik atmosferine ışık tutarken, aynı zamanda 20. yüzyılın en yıkıcı rejimlerinden birinin entelektüel arka planını anlamak için önemli bir kaynaktır."
   },
@@ -11,7 +11,7 @@ const books = [
     name: "Atomik Alışkanlıklar",
     author: "James Clear",
     price: "₺89,90",
-    category: "bilim",
+    category: "Bilim",
     image: "img/atomik-aliskanliklar.jpg",
     description: "Atomik Alışkanlıklar, küçük ve istikrarlı değişimlerin nasıl kalıcı alışkanlıklara dönüştürülebileceğini gösteren bir kişisel gelişim kitabıdır. James Clear, bilimsel araştırmalardan ve kendi hayat deneyimlerinden yola çıkarak, başarıya ulaşmanın gizli formülünü alışkanlık sistemleriyle açıklar. Kitap, hedef odaklı değil, süreç odaklı olmanın önemine vurgu yapar."
   },
@@ -19,7 +19,7 @@ const books = [
     name: "Böyle Buyurdu Zerdüşt",
     author: "F. Nietzsche",
     price: "₺74,90",
-    category: "felsefe",
+    category: "Felsefe",
     image: "img/zerdust.jpg",
     description: "Böyle Buyurdu Zerdüşt, Nietzsche'nin en önemli felsefi eserlerinden biridir. Üstinsan kavramı, tanrının ölümü ve ebedi dönüş gibi kavramları anlatan kitap, şiirsel ve aforizmik bir anlatıma sahiptir. Kitabın baş karakteri Zerdüşt, toplumun değer yargılarına başkaldırır ve bireyin kendi değerlerini yaratması gerektiğini savunur."
   },
@@ -27,7 +27,7 @@ const books = [
     name: "1984",
     author: "George Orwell",
     price: "₺54,90",
-    category: "roman",
+    category: "Roman",
     image: "img/1984.jpg",
     description: "1984, George Orwell tarafından kaleme alınmış distopik bir romandır. Totaliter bir devletin birey üzerindeki baskılarını ve düşünce denetimini anlatır. Büyük Birader'in sürekli gözetimi altında yaşayan Winston Smith'in hikayesi, özgürlüğün, gerçekliğin ve bireyselliğin sorgulandığı bir dünyayı resmeder. Kitap, günümüz politikalarını anlamada hâlâ etkili bir referanstır."
   },
@@ -35,7 +35,7 @@ const books = [
     name: "Tutunamayanlar",
     author: "Oğuz Atay",
     price: "₺69,90",
-    category: "edebiyat",
+    category: "Edebiyat",
     image: "img/tutunamayanlar.jpg",
     description: "Tutunamayanlar, Oğuz Atay'ın modern Türk edebiyatına damga vuran eseridir. Topluma uyum sağlayamayan bireylerin iç dünyasını ironik bir dille anlatır. Selim Işık ve Turgut Özben karakterleri üzerinden sorgulanan yaşam, aidiyet ve bireysellik, kitabın temel temalarını oluşturur. Yapıbozumcu anlatımıyla alışılmış roman yapısını yıkar."
   },
@@ -43,7 +43,7 @@ const books = [
     name: "Karamazov Kardeşler",
     author: "Fyodor Dostoyevski",
     price: "₺84,90",
-    category: "roman",
+    category: "Roman",
     image: "img/karamazov.jpg",
     description: "Karamazov Kardeşler, Dostoyevski'nin insan doğasının karanlık ve aydınlık yönlerini irdelediği başyapıtıdır. Aile içi çatışmalar, Tanrı inancı, ahlak ve özgür irade gibi felsefi temaları işleyen roman, üç kardeşin hayatları üzerinden derin psikolojik çözümlemeler sunar. Yazarın entelektüel derinliği bu romanda zirveye ulaşır."
   },
@@ -51,7 +51,7 @@ const books = [
     name: "Sefiller",
     author: "Victor Hugo",
     price: "₺64,90",
-    category: "roman",
+    category: "Roman",
     image: "img/sefiller.jpg",
     description: "Sefiller, Fransız yazar Victor Hugo'nun en bilinen eseridir. Jean Valjean karakteri üzerinden merhamet, adalet, insanlık onuru ve affetmenin gücü gibi evrensel temaları işler. Fransız Devrimi sonrası dönemde geçen roman, bireyin içsel dönüşümünü ve toplumsal adaletsizliklerle mücadelesini dramatik bir şekilde anlatır."
   },
@@ -59,7 +59,7 @@ const books = [
     name: "Tarihin İzinde",
     author: "İlber Ortaylı",
     price: "₺49,90",
-    category: "tarih",
+    category: "Tarih",
     image: "img/tarihin-izinde.jpg",
     description: "Tarihin İzinde, Prof. Dr. İlber Ortaylı'nın tarihsel olayları yorumladığı popüler denemelerden oluşur. Osmanlı ve Cumhuriyet dönemlerini kıyaslayan analizlerle okuyucuya bilgi verirken, aynı zamanda tarih bilincinin önemini vurgular. Akıcı dili ve entelektüel bakışıyla geniş bir okur kitlesine hitap eder."
   },
@@ -67,7 +67,7 @@ const books = [
     name: "Nutuk",
     author: "M. Kemal Atatürk",
     price: "₺39,90",
-    category: "tarih",
+    category: "Tarih",
     image: "img/nutuk.jpg",
     description: "Nutuk, Türkiye Cumhuriyeti'nin kurucusu Mustafa Kemal Atatürk'ün, Kurtuluş Savaşı'ndan Cumhuriyet'in ilanına kadar geçen süreci belgelediği tarihi metindir. Nutuk, yalnızca politik bir konuşma değil, aynı zamanda bir milletin kaderini değiştiren liderlik öyküsünün detaylı anlatımıdır. Cumhuriyet tarihinin temel taşlarından biridir."
   },
@@ -75,7 +75,7 @@ const books = [
     name: "Küçük Prens",
     author: "Antoine de Saint-Exupéry",
     price: "₺29,90",
-    category: "cocuk",
+    category: "Çocuk",
     image: "img/kucuk-prens.jpg",
     description: "Küçük Prens, sade diliyle hem çocuklara hem yetişkinlere hitap eden evrensel bir masaldır. Küçük bir gezegenden dünyaya gelen prensin farklı karakterlerle yaptığı sohbetler, sevgi, dostluk, sorumluluk ve insan doğası üzerine derin mesajlar taşır. Anlamı katmanlıdır ve her yaşta farklı yorumlanabilir."
   }
