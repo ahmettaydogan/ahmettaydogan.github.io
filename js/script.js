@@ -78,7 +78,15 @@ const books = [
     category: "Çocuk",
     image: "img/kucuk-prens.jpg",
     description: "Küçük Prens, sade diliyle hem çocuklara hem yetişkinlere hitap eden evrensel bir masaldır. Küçük bir gezegenden dünyaya gelen prensin farklı karakterlerle yaptığı sohbetler, sevgi, dostluk, sorumluluk ve insan doğası üzerine derin mesajlar taşır. Anlamı katmanlıdır ve her yaşta farklı yorumlanabilir."
-  }
+  },
+  {
+    name:"Kendime Düşünceler",
+    author: "Marcus Aurelius",
+    price:"₺34,75",
+    category:"Felsefe",
+    image:"img/kendime-dusunceler.jpg",
+    description:"Sağlam bir eşitlik ve özgürlük inancına sahip olan Marcus Aurelius imparatorluğu boyunca doğayı bilip anlayarak yaşamaya çalışmış, her şeyin ortasına insanı koymuştur. Günlük olarak kaleme alınmış bir özdeyişler ve düşünceler derlemesi denebilecek Kendime Düşünceler eserinde kendinden önceki caesarları ve filozofları eleştirmekle kalmayıp, kendi kendini de sorguya çekerek bir vicdan muhasebesi de yapar. Sonraki kuşaklara, kilise düşünürlerine, Rönesans’a da temel olan Kendime Düşünceler, Stoa felsefesinin anlaşılması açısından günümüzde de çok değerli bir kaynaktır."
+ }
 ];
 
 
