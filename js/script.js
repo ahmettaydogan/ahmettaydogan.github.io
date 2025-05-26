@@ -86,6 +86,14 @@ const books = [
     category:"Felsefe",
     image:"img/kendime-dusunceler.jpg",
     description:"Sağlam bir eşitlik ve özgürlük inancına sahip olan Marcus Aurelius imparatorluğu boyunca doğayı bilip anlayarak yaşamaya çalışmış, her şeyin ortasına insanı koymuştur. Günlük olarak kaleme alınmış bir özdeyişler ve düşünceler derlemesi denebilecek Kendime Düşünceler eserinde kendinden önceki caesarları ve filozofları eleştirmekle kalmayıp, kendi kendini de sorguya çekerek bir vicdan muhasebesi de yapar. Sonraki kuşaklara, kilise düşünürlerine, Rönesans’a da temel olan Kendime Düşünceler, Stoa felsefesinin anlaşılması açısından günümüzde de çok değerli bir kaynaktır."
+ },
+  {
+    name:"Mahalle Sineması",
+    author: "Sevim Ak",
+    price:"₺90",
+    category:"Çocuk",
+    image:"img/sevimak.jpg",
+    description:"Sevim Ak, bu kitabındaki öyküleri, küçük bir kız çocuğunun ağzından anlatıyor. Eski sinemacı Artist Kenan'ın yardımıyla, evin odunluğunda bir sinema salonu hazırlıyor çocuklar. Kenan Amca da sinema salonu hazırlıyor çocuklar."
  }
 ];
 
