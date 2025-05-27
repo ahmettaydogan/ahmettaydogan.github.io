@@ -49,9 +49,11 @@
 
 
   <section class="cart-page container">
-    <h1>Sepetiniz Boş</h1>
-    <p class="empty-cart">Henüz hiç ürün eklemediniz.</p>
-    <a href="index.html" class="back-home">Kitaplara Göz At</a>
+    <h1>Sepetiniz</h1>
+<div id="cartItems"></div>
+<p id="emptyCart" class="empty-cart">Henüz hiç ürün eklemediniz.</p>
+<a href="index.html" class="back-home">Kitaplara Göz At</a>
+
   </section>
 
   <footer class="footer">
@@ -59,6 +61,66 @@
   </footer>
 
 </body>
+<script>
+  const cartContainer = document.getElementById("cartItems");
+  const emptyMessage = document.getElementById("emptyCart");
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+  function renderCart() {
+    cartContainer.innerHTML = "";
+
+    if (cart.length === 0) {
+      emptyMessage.style.display = "block";
+      return;
+    }
+
+    emptyMessage.style.display = "none";
+
+    cart.forEach(book => {
+      const item = document.createElement("div");
+      item.className = "card";
+      item.innerHTML = `
+        <img src="${book.image}" alt="${book.name}">
+        <div class="card-content">
+          <h3>${book.name}</h3>
+          <p>${book.author}</p>
+          <div class="card-footer">
+            <span>${book.price}</span>
+            <div class="icons">
+              <button title="Sepetten Kaldır">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="#dc2626">
+                  <path d="M3 6l3 18h12l3-18H3zm16.24 2l-1.2 12H6.96L5.76 8h13.48zM10 10h2v8h-2v-8zm4 0h2v8h-2v-8z"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      `;
+
+      item.querySelector("button").addEventListener("click", () => {
+        removeFromCart(book.name);
+      });
+
+      cartContainer.appendChild(item);
+    });
+  }
+
+  function removeFromCart(bookName) {
+    cart = cart.filter(b => b.name !== bookName);
+    localStorage.setItem("cart", JSON.stringify(cart));
+    renderCart();
+    updateCartCount();
+  }
+
+  function updateCartCount() {
+    const count = document.querySelectorAll(".cart-count");
+    count.forEach(el => el.textContent = cart.length);
+  }
+
+  renderCart();
+  updateCartCount();
+</script>
+
 </html>
 
 
