@@ -94,7 +94,73 @@ const books = [
     category:"Çocuk",
     image:"img/sevimak.jpg",
     description:"Sevim Ak, bu kitabındaki öyküleri, küçük bir kız çocuğunun ağzından anlatıyor. Eski sinemacı Artist Kenan'ın yardımıyla, evin odunluğunda bir sinema salonu hazırlıyor çocuklar. Kenan Amca da sinema salonu hazırlıyor çocuklar."
- }
+ },
+  {
+
+    name:"Engereğin Gözü",
+    author: "Zülfü Livaneli",
+    price:"₺210",
+    category:"Roman",
+    image:"img/livanelieg.jpg",
+    description:"25. yıl baskısıyla yeniden okurlarıyla buluşan Engereğin Gözü, bir dönem romanı olmanın ötesinde, insan psikolojisinin derinliklerine; dün, bugün ve yarının saraylarına, en gizli sırları bile aydınlatacak gerçeklikte ışık tutan bir Zülfü Livaneli klasiği."
+  },
+  {
+    name:"El Kızı",
+    author: "Orhan Kemal",
+    price:"₺308",
+    category:"Edebiyat",
+    image:"img/elkızı.jpg",
+    description:" Orhan Kemal’in ev içi yaşamlara ilişkin yazdığı en yetkin kitaplardan biri olan El Kızı, toplumun aile içindeki yansıyışını da mükemmel biçimde ele alır. Orhan Kemal’in kitapları bir okurun hayatta w rastlayabileceği o çok nadir hazineler arasında yer alır. "
+  },
+  { 
+    name:"Akan Nehir Gibi",
+    author:"Paulo Coelho",
+    price:"₺154",
+    category:"Edebiyat",
+    image:"img/akannehirgibi.jpg",
+    description:"Dünyanın en sevilen ve en çok okunan yazarlarından Paulo Coelho’dan nefes kesici bir anlatı koleksiyonu."
+  },
+  
+  {
+    name:"Fatih Sultan Mehmed",
+    author: "İlber Ortaylı",
+    price:"₺205",
+    category:"Tarih",
+    image:"img/fsm.jpg",
+    description:"İlber Ortaylı, uzun yıllardır üzerinde çalıştığı yeni biyografisinde Fâtih Sultan Mehmed’i yalnızca efsanevi bir hükümdar olarak değil, aynı zamanda bir çağın mimarı ve unutulmaz bir medeniyetin kurucusu olarak tanımlıyor. Tüm zamanların en önde gelen entelektüel mareşalini yeni bakış açıları ve özgün fikirlerle ele alan bu çalışma, Türk tarihçiliği için eşsiz bir başvuru kaynağı…"
+ },
+    { name:"Mutlu Olma Sanatı",
+    author: "Arthur Schopenhauer",
+    price:"₺65",
+    category:"Felsefe",
+    image:"img/mos.jpg",
+    description:"Mutlu Olma Sanatı, iyimser dünya görüşüne karşı çıkan ve yaşadığımız dünyayı olası dünyaların en kötüsü sayan Schopenhauer’den umulmadık bir kılavuz. Adını felsefe tarihine kötümser olarak yazdıran filozofun bu küçük kitabı, mutluluğa ulaşma çabası olarak hayata dair pratik bir felsefeyi de olanaklı kılıyor."
+     },
+        { 
+          name:"Yaşamla Buluşmak",
+    author: "Jiddu Krishnamurti",
+    price:"₺206",
+    category:"Felsefe",
+    image:"img/yasamlabulusmak.jpg",
+    description:"Yaşamla Buluşmak gündelik yaşamın karmaşası içinde dahi içsel huzuru ve özgürlüğü bulmak isteyen herkes için bir kılavuz. Ne de olsa Krishnamurti sizi yalnızca okumaya değil, aynı zamanda kendi yaşamınızı değiştirmeye, her şeyi gerçeğin ve eylemin çerçevesinde sınamaya çağıran bir yazar. Yaşamla Buluşmak topluma karşın toplumda kalma ikileminde sıkışıp kalan herkes için bir umut ışığı."
+     },
+        {
+     name:"Kanatsız Arı",
+    author: "Ahmet Şerif İzgören",
+    price:"₺90",
+    category:"Çocuk",
+    image:"img/kanatsizari.jpg",
+    description:"Çalışkan arımız Ahmet Şerif İzgören, bu kitabında bir petek bala harikalar sığdırıyor. Kanatları olmayan minik bir arı, hayal gücünün uçsuz bucaksız ovalarında uçuyor, eksiklik sanılan şeylerin gerçek yüzünü fazlasıyla ceplerimize dolduruyor. Yeniliklere doğru kanat çırpan kovanı ve baldan tatlı arılarıyla Kanatsız Arı Mu, geceyi aydınlatan ateş böcekleri gibi ışıl ışıl…Hayatın renkli gökyüzünde süzülmek için kanatlara ihtiyacımız var mı?"
+        },
+
+    {
+    name:"Düşünce Gücüyle Tedavi",
+    author: "Louise L. Hay",
+    price:"₺176",
+    category:"Bilim",
+    image:"img/dusuncegucu.jpg",
+    description:"Kitap, küçücük bir sivilceden, kansere kadar birçok hastalığın nedenlerinin psikolojik olumsuzluklardan kaynaklandığını satır satır anlatıyor. Hangi hastalık için, hangi olumlu öneriyi düşüncelerinizin besini olarak kullanacağınızı da söylüyor."
+   } 
 ];
 
 
