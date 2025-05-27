@@ -108,7 +108,7 @@ body {
 }
 
 .hero {
-  background: linear-gradient(to right, #b0ffb0, #46dfd7);
+  background: linear-gradient(to right, #ffdbb0, #dfdd46);
   padding: 1rem 0;
   text-align: center;
   position: sticky;
