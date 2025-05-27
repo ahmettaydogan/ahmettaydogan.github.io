@@ -22,4 +22,23 @@ if (!book) {
           </div>
         </div>
       `;
+      let cart = JSON.parse(localStorage.getItem("cart")) || [];
+const addBtn = document.querySelector(".add-cart");
+
+const isInCart = cart.some(item => item.name === book.name);
+if (isInCart) addBtn.textContent = "Sepetten Çıkar";
+
+addBtn.addEventListener("click", () => {
+  const index = cart.findIndex(item => item.name === book.name);
+  if (index >= 0) {
+    cart.splice(index, 1);
+    addBtn.textContent = "Sepete Ekle";
+  } else {
+    cart.push(book);
+    addBtn.textContent = "Sepetten Çıkar";
+  }
+
+  localStorage.setItem("cart", JSON.stringify(cart));
+});
+
 }
