@@ -61,6 +61,17 @@
 
 <script src="js/script.js"></script>
 <script src="js/book.js"></script>
+<script>
+  // Sepet sayacını güncelle
+  function updateCartCount() {
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+    const count = document.querySelectorAll(".cart-count");
+    count.forEach(el => el.textContent = cart.length);
+  }
+
+  updateCartCount();
+</script>
+
 </body>
 </html>
 
