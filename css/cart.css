@@ -26,3 +26,21 @@
     .back-home:hover {
       background: #000;
     }
+
+    .card {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  background: white;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  border-radius: 6px;
+}
+
+.card img {
+  width: 260px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
