@@ -141,6 +141,9 @@ function renderBooks(filter = "tumu") {
     `;
     container.appendChild(card);
   });
+  addCartEvent();
+updateCartCount();
+
 }
 
 
@@ -208,6 +211,9 @@ function renderSearchResults(list) {
     `;
     container.appendChild(card);
   });
+  addCartEvent();
+updateCartCount();
+
 }
 
 function handleSortChange() {
@@ -274,5 +280,48 @@ function renderSortedBooks(list) {
       </a>
     `;
     container.appendChild(card);
+  });
+  addCartEvent();
+updateCartCount();
+
+}
+
+// localStorage ile sepet verisini sakla
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+function saveCart() {
+  localStorage.setItem("cart", JSON.stringify(cart));
+  updateCartCount();
+}
+
+function updateCartCount() {
+  const count = document.querySelectorAll(".cart-count");
+  count.forEach(el => el.textContent = cart.length);
+}
+
+// Sepete Ekle / Çıkar butonları
+function addCartEvent() {
+  const buttons = document.querySelectorAll(".card .icons button[title='Sepete Ekle']");
+  buttons.forEach((btn, index) => {
+    const book = books[index];
+
+    // Başlangıçta durumu kontrol et
+    const isInCart = cart.some(item => item.name === book.name);
+    if (isInCart) btn.querySelector("svg").style.fill = "#16a34a";
+
+    btn.addEventListener("click", (e) => {
+      e.preventDefault();
+      const indexInCart = cart.findIndex(item => item.name === book.name);
+
+      if (indexInCart >= 0) {
+        cart.splice(indexInCart, 1); // çıkar
+        btn.querySelector("svg").style.fill = "#444";
+      } else {
+        cart.push(book); // ekle
+        btn.querySelector("svg").style.fill = "#16a34a";
+      }
+
+      saveCart();
+    });
   });
 }
