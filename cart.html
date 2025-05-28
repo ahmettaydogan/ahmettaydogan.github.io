@@ -9,6 +9,7 @@
   <link rel="icon" type="image/x-icon" href="img/logo.ico">
 </head>
 <body>
+<script src="js/script.js"></script>
 
  <header class="navbar">
     <div class="container navbar-inner">
@@ -62,20 +63,38 @@
 
 </body>
 <script>
-  const cartContainer = document.getElementById("cartItems");
-  const emptyMessage = document.getElementById("emptyCart");
-  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+  function getCurrentUser() {
+    return localStorage.getItem("currentUser");
+  }
+
+  function getUserCart() {
+    const user = getCurrentUser();
+    const carts = JSON.parse(localStorage.getItem("userCarts")) || {};
+    return user ? (carts[user] || []) : [];
+  }
+
+  function removeFromCart(bookName) {
+    const user = getCurrentUser();
+    const carts = JSON.parse(localStorage.getItem("userCarts")) || {};
+    if (!user || !carts[user]) return;
+
+    carts[user] = carts[user].filter(b => b.name !== bookName);
+    localStorage.setItem("userCarts", JSON.stringify(carts));
+    renderCart();
+  }
 
   function renderCart() {
-    cartContainer.innerHTML = "";
+    const cart = getUserCart();
+    const container = document.getElementById("cartItems");
+    const emptyMsg = document.getElementById("emptyCart");
 
+    container.innerHTML = "";
     if (cart.length === 0) {
-      emptyMessage.style.display = "block";
+      emptyMsg.style.display = "block";
       return;
     }
 
-    emptyMessage.style.display = "none";
-
+    emptyMsg.style.display = "none";
     cart.forEach(book => {
       const item = document.createElement("div");
       item.className = "card";
@@ -96,30 +115,16 @@
           </div>
         </div>
       `;
-
       item.querySelector("button").addEventListener("click", () => {
         removeFromCart(book.name);
       });
-
-      cartContainer.appendChild(item);
+      container.appendChild(item);
     });
   }
 
-  function removeFromCart(bookName) {
-    cart = cart.filter(b => b.name !== bookName);
-    localStorage.setItem("cart", JSON.stringify(cart));
-    renderCart();
-    updateCartCount();
-  }
-
-  function updateCartCount() {
-    const count = document.querySelectorAll(".cart-count");
-    count.forEach(el => el.textContent = cart.length);
-  }
-
   renderCart();
-  updateCartCount();
 </script>
+
 
 </html>
 
