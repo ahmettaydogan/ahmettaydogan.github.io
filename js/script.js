@@ -160,7 +160,7 @@ const books = [
     category:"Bilim",
     image:"img/dusuncegucu.jpg",
     description:"Kitap, küçücük bir sivilceden, kansere kadar birçok hastalığın nedenlerinin psikolojik olumsuzluklardan kaynaklandığını satır satır anlatıyor. Hangi hastalık için, hangi olumlu öneriyi düşüncelerinizin besini olarak kullanacağınızı da söylüyor."
-   } 
+   }  	
 ];
 
 
@@ -371,23 +371,132 @@ function addCartEvent() {
   buttons.forEach((btn, index) => {
     const book = books[index];
 
-    // Başlangıçta durumu kontrol et
+    const cart = getUserCart();
     const isInCart = cart.some(item => item.name === book.name);
     if (isInCart) btn.querySelector("svg").style.fill = "#16a34a";
 
     btn.addEventListener("click", (e) => {
       e.preventDefault();
-      const indexInCart = cart.findIndex(item => item.name === book.name);
+
+      if (!getCurrentUser()) {
+        alert("Sepete ürün eklemek için giriş yapmalısınız.");
+        return;
+      }
+
+      let updatedCart = getUserCart();
+      const indexInCart = updatedCart.findIndex(item => item.name === book.name);
 
       if (indexInCart >= 0) {
-        cart.splice(indexInCart, 1); // çıkar
+        updatedCart.splice(indexInCart, 1);
         btn.querySelector("svg").style.fill = "#444";
       } else {
-        cart.push(book); // ekle
+        updatedCart.push(book);
         btn.querySelector("svg").style.fill = "#16a34a";
       }
 
-      saveCart();
+      saveUserCart(updatedCart);
     });
   });
+}
+
+
+function updateUserMenu() {
+  const user = localStorage.getItem("currentUser");
+  const nav = document.querySelector(".nav-right");
+
+  if (!nav) return;
+
+  if (user) {
+    nav.innerHTML = `
+      <span style="font-weight: bold;">👋 Merhaba, ${user}</span>
+      <button class="auth-btn" onclick="logout()">Çıkış</button>
+      <a href="cart.html">
+        <button class="cart-btn" title="Sepet">
+          <svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="#333">
+            <path d="M7 4h-2l-1 2h-2v2h1l3.6 7.59-1.35 2.44
+              c-.16.29-.25.63-.25.97 0 1.1.9 2 2 2h12v-2h-12l1.1-2h7.45
+              c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48
+              0-.55-.45-1-1-1h-14z" />
+          </svg>
+          <span class="cart-count">0</span>
+        </button>
+      </a>
+    `;
+  }
+}
+
+function logout() {
+  localStorage.removeItem("currentUser");
+  window.location.reload();
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  renderBooks();
+  updateCartCount();
+  updateUserMenu(); // 👈 EKLE
+});
+
+function logout() {
+  localStorage.removeItem("currentUser");
+  window.location.href = "sign.html"; // çıkışta giriş ekranına gönder
+}
+
+function updateUserMenu() {
+  const user = localStorage.getItem("currentUser");
+  const nav = document.querySelector(".nav-right");
+
+  if (!nav) return;
+
+  if (user) {
+    nav.innerHTML = `
+      <span style="font-weight: bold;">👋 Merhaba, ${user}</span>
+      <button class="auth-btn" onclick="logout()">Çıkış</button>
+      <a href="cart.html">
+        <button class="cart-btn" title="Sepet">
+          <svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="#333">
+            <path d="M7 4h-2l-1 2h-2v2h1l3.6 7.59-1.35 2.44
+              c-.16.29-.25.63-.25.97 0 1.1.9 2 2 2h12v-2h-12l1.1-2h7.45
+              c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48
+              0-.55-.45-1-1-1h-14z" />
+          </svg>
+          <span class="cart-count">0</span>
+        </button>
+      </a>
+    `;
+  }
+}
+
+function logout() {
+  localStorage.removeItem("currentUser");
+  window.location.href = "sign.html"; // veya index.html
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  updateUserMenu();
+});
+
+function getCurrentUser() {
+  return localStorage.getItem("currentUser");
+}
+
+function getUserCart() {
+  const user = getCurrentUser();
+  if (!user) return [];
+  const carts = JSON.parse(localStorage.getItem("userCarts")) || {};
+  return carts[user] || [];
+}
+
+function saveUserCart(cart) {
+  const user = getCurrentUser();
+  if (!user) return;
+  const carts = JSON.parse(localStorage.getItem("userCarts")) || {};
+  carts[user] = cart;
+  localStorage.setItem("userCarts", JSON.stringify(carts));
+  updateCartCount();
+}
+
+function updateCartCount() {
+  const cart = getUserCart();
+  const count = document.querySelectorAll(".cart-count");
+  count.forEach(el => el.textContent = cart.length);
 }
